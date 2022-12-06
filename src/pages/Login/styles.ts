@@ -40,6 +40,23 @@ export const CardLoginLeft = styled(BaseCardLogin)`
   background: ${(props) => props.theme.white};
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
+
+  padding-left: 3rem;
+
+  input {
+    width: 32rem;
+    height: 4rem;
+
+    border: 1px solid ${(props) => props.theme.var9};
+    border-radius: 8px;
+
+    padding: 13px 8px;
+    font-size: 1.4rem;
+
+    ::placeholder {
+      color: ${(props) => props.theme.var9};
+    }
+  }
 `;
 
 export const CardLoginRight = styled(BaseCardLogin)`
