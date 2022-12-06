@@ -7,8 +7,8 @@ interface ButtonContainerProps {
 }
 
 const buttonVariants = {
-  btnVariant1: "green",
-  btnVariant2: "purple",
+  btnVariant1: "#3AB67D",
+  btnVariant2: "#F0F0F0",
 };
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
@@ -20,7 +20,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   border-radius: 10px;
 
   height: 4rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 1.5rem;
 
   ${(props) => {

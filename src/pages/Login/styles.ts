@@ -41,12 +41,24 @@ export const CardLoginLeft = styled(BaseCardLogin)`
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
 
-  padding-left: 3rem;
+  padding: 3rem;
+
+  p {
+    color: ${(props) => props.theme.var9};
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+  }
+  .subtitulo {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
 
   input {
     width: 32rem;
     height: 4rem;
-
     border: 1px solid ${(props) => props.theme.var9};
     border-radius: 8px;
 
@@ -57,6 +69,41 @@ export const CardLoginLeft = styled(BaseCardLogin)`
       color: ${(props) => props.theme.var9};
     }
   }
+
+  input:first-child {
+    margin-bottom: 1.8rem;
+  }
+
+  input:last-child {
+    margin-bottom: 0.8rem;
+  }
+
+  .forgot-pass {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    margin-bottom: 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  .field-sign {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+   
+    p{
+      margin-bottom:1.8rem;
+    }
+  }
+
+  .field-btns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+  }
+
 `;
 
 export const CardLoginRight = styled(BaseCardLogin)`

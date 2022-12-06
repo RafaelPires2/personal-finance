@@ -1,4 +1,4 @@
-import { AiOutlineCheckCircle } from "react-icons/all";
+import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { Button } from "../../components/button";
 
@@ -17,18 +17,18 @@ export function Login() {
       <WrapperCardLogin>
         <CardLoginLeft>
           <h1>Sign In</h1>
-          <p>Its time to check Your business</p>
+          <p className="subtitulo">Its time to check Your business</p>
 
           <form>
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Senha" />
           </form>
-          <div>
+          <div className="forgot-pass">
             <p>Forgot your password?</p>
           </div>
-          <div>
+          <div className="field-sign">
             <p>Sign In with</p>
-            <div>Icon Google</div>
+            <FcGoogle size={32}/>
           </div>
           <div className="field-btns">
             <Button textContent="Sign In" variant="btnVariant1" />
