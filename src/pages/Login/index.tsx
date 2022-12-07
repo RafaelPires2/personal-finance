@@ -28,7 +28,7 @@ export function Login() {
           </div>
           <div className="field-sign">
             <p>Sign In with</p>
-            <FcGoogle size={32}/>
+            <FcGoogle size={32} />
           </div>
           <div className="field-btns">
             <Button textContent="Sign In" variant="btnVariant1" />

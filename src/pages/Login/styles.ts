@@ -90,9 +90,9 @@ export const CardLoginLeft = styled(BaseCardLogin)`
     font-weight: 700;
     font-size: 1.4rem;
     margin-bottom: 4rem;
-   
-    p{
-      margin-bottom:1.8rem;
+
+    p {
+      margin-bottom: 1.8rem;
     }
   }
 
@@ -103,7 +103,6 @@ export const CardLoginLeft = styled(BaseCardLogin)`
     align-items: center;
     gap: 2.2rem;
   }
-
 `;
 
 export const CardLoginRight = styled(BaseCardLogin)`
@@ -114,6 +113,7 @@ export const CardLoginRight = styled(BaseCardLogin)`
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
   border: 1px solid black;
+  border-left: none;
 
   color: ${(props) => props.theme.white};
   gap: 2rem;
