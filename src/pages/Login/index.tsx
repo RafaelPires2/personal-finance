@@ -12,6 +12,8 @@ import {
 export function Login() {
   const { register, handleSubmit } = useForm();
 
+  const handleLogin = data => console.log(data);
+
   return (
     <Wrapper>
       <WrapperCardLogin>
@@ -19,21 +21,34 @@ export function Login() {
           <h1>Sign In</h1>
           <p className="subtitulo">Its time to check Your business</p>
 
-          <form>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Senha" />
+          <form onSubmit={handleSubmit(handleLogin)}>
+            <input type="email" placeholder="Email" {...register("email")} />
+            <input
+              type="password"
+              placeholder="Senha"
+              {...register("password")}
+            />
+
+            <div className="forgot-pass">
+              <p>Forgot your password?</p>
+            </div>
+            <div className="field-sign">
+              <p>Sign In with</p>
+              <FcGoogle size={32} />
+            </div>
+            <div className="field-btns">
+              <Button
+                textColor="primary"
+                textContent="Sign In"
+                variant="btnVariant1"
+              />
+              <Button
+                textColor="secondary"
+                textContent="Sign Up"
+                variant="btnVariant2"
+              />
+            </div>
           </form>
-          <div className="forgot-pass">
-            <p>Forgot your password?</p>
-          </div>
-          <div className="field-sign">
-            <p>Sign In with</p>
-            <FcGoogle size={32} />
-          </div>
-          <div className="field-btns">
-            <Button textContent="Sign In" variant="btnVariant1" />
-            <Button textContent="Sign Up" variant="btnVariant2" />
-          </div>
         </CardLoginLeft>
         <CardLoginRight>
           <h2>Features</h2>

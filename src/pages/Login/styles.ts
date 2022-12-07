@@ -97,8 +97,8 @@ export const CardLoginLeft = styled(BaseCardLogin)`
   }
 
   .field-btns {
-    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 2.2rem;
