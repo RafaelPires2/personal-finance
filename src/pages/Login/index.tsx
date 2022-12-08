@@ -1,6 +1,6 @@
 import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
-import { Button } from "../../components/button";
+import { Button, ButtonSubmit } from "../../components/button";
 
 import {
   WrapperCardLogin,
@@ -12,7 +12,7 @@ import {
 export function Login() {
   const { register, handleSubmit } = useForm();
 
-  const handleLogin = data => console.log(data);
+  const handleLogin = (data) => console.log(data);
 
   return (
     <Wrapper>
@@ -37,12 +37,14 @@ export function Login() {
               <FcGoogle size={32} />
             </div>
             <div className="field-btns">
-              <Button
+              <ButtonSubmit
+                SizeW="103"
                 textColor="primary"
                 textContent="Sign In"
                 variant="btnVariant1"
               />
               <Button
+                SizeW="160"
                 textColor="secondary"
                 textContent="Sign Up"
                 variant="btnVariant2"

@@ -74,14 +74,11 @@ export const CardLoginLeft = styled(BaseCardLogin)`
     margin-bottom: 1.8rem;
   }
 
-  input:last-child {
-    margin-bottom: 0.8rem;
-  }
-
   .forgot-pass {
     width: 100%;
     display: flex;
     justify-content: right;
+    margin-top: 0.8rem;
     margin-bottom: 1.8rem;
     font-size: 1.2rem;
   }
