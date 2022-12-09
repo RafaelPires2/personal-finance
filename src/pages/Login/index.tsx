@@ -1,6 +1,8 @@
 import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { Button, ButtonSubmit } from "../../components/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
 import {
   WrapperCardLogin,
@@ -9,8 +11,22 @@ import {
   Wrapper,
 } from "./styles";
 
+const schema = z.object({
+  email: z.string().email("Email precisa ser válido"),
+  password: z
+    .string()
+    .min(6, { message: "A senha precisa ter no mínimo 6 caracteres" })
+    .max(12),
+});
+
 export function Login() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
   const handleLogin = (data) => console.log(data);
 

@@ -21,7 +21,7 @@ export function ButtonSubmit({
   return (
     <ButtonContainer
       type="submit"
-      WidthButton={SizeW}
+      SizeW={SizeW}
       textColor={textColor}
       variant={variant}
     >
@@ -39,7 +39,7 @@ export function Button({
   return (
     <ButtonContainer
       type="button"
-      WidthButton={SizeW}
+      SizeW={SizeW}
       textColor={textColor}
       variant={variant}
     >

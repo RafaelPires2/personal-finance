@@ -99,6 +99,16 @@ export const CardLoginLeft = styled(BaseCardLogin)`
     justify-content: center;
     align-items: center;
     gap: 2.2rem;
+
+    button[type="submit"] {
+      :hover {
+        background-color: ${(props) => props.theme.var1};
+      }
+    }
+    button[type="button"] {
+    :hover {
+      background-color: ${(props) => props.theme.var8};
+    }
   }
 `;
 

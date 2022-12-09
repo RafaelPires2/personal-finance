@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
+// Permite que a tipagem criada seja chamada na props.
 export type ButtonVariant = "btnVariant1" | "btnVariant2";
 export type TextButton = "primary" | "secondary";
 export type WidthButton = "103" | "122" | "138" | "160" | "192";
 
+// Cria uma tipagem obrigatória para inserir nas props
 interface ButtonContainerProps {
   variant: ButtonVariant;
   textColor: TextButton;
-  WidthButton: WidthButton;
+  SizeW: WidthButton;
 }
 
+// Pega a tipagem e define um valor a ela.
 const buttonVariants = {
   btnVariant1: "#3AB67D",
   btnVariant2: "#F0F0F0",
@@ -43,5 +46,9 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   ${(props) => {
     return `background-color: ${buttonVariants[props.variant]}
     `;
-  }}
+  }};
+
+  ${(props) => {
+    return `width: ${buttonVariants[props.SizeW]}`;
+  }};
 `;
