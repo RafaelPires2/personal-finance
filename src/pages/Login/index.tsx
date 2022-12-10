@@ -1,8 +1,8 @@
 import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { Button, ButtonSubmit } from "../../components/button";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 import {
   WrapperCardLogin,
@@ -11,12 +11,16 @@ import {
   Wrapper,
 } from "./styles";
 
-const schema = z.object({
-  email: z.string().email("Email precisa ser válido"),
-  password: z
+const schema = yup.object().shape({
+  email: yup
     .string()
-    .min(6, { message: "A senha precisa ter no mínimo 6 caracteres" })
-    .max(12),
+    .required("O campo Email é obrigatório")
+    .email("Email precisa ser válido. Exemplo: email@gmail.com"),
+  password: yup
+    .string()
+    .required("O campo Senha é obrigatório")
+    .min(6, "A senha precisa ter no mínimo 6 caracteres")
+    .max(12, "A senha precisa ter no máximo 12 caracteres"),
 });
 
 export function Login() {
@@ -25,10 +29,10 @@ export function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: zodResolver(schema),
+    resolver: yupResolver(schema),
   });
 
-  const handleLogin = (data) => console.log(data);
+  const handleLogin = (data: any) => console.log(data);
 
   return (
     <Wrapper>
@@ -39,11 +43,13 @@ export function Login() {
 
           <form onSubmit={handleSubmit(handleLogin)}>
             <input type="email" placeholder="Email" {...register("email")} />
+            <p className="message-error error1">{errors?.email?.message}</p>
             <input
               type="password"
               placeholder="Senha"
               {...register("password")}
             />
+            <p className="message-error">{errors?.password?.message}</p>
 
             <div className="forgot-pass">
               <p>Forgot your password?</p>

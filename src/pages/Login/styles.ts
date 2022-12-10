@@ -44,71 +44,78 @@ export const CardLoginLeft = styled(BaseCardLogin)`
   padding: 3rem;
 
   p {
-    color: ${(props) => props.theme.var9};
-    font-weight: 500;
+  color: ${(props) => props.theme.var9};
+  font-weight: 500;
   }
 
   h1 {
-    font-size: 3.6rem;
+  font-size: 3.6rem;
   }
   .subtitulo {
-    font-size: 1.4rem;
-    margin-bottom: 4rem;
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  }
+
+  .message-error {
+  font-size: 1.2rem;
+  color: red;
+  margin-top: 0.5rem;
+  }
+
+  .error1 {
+  margin-bottom: 1.8rem
   }
 
   input {
-    width: 32rem;
-    height: 4rem;
-    border: 1px solid ${(props) => props.theme.var9};
-    border-radius: 8px;
+  width: 32rem;
+  height: 4rem;
+  border: 1px solid ${(props) => props.theme.var9};
+  border-radius: 8px;
 
-    padding: 13px 8px;
-    font-size: 1.4rem;
+  padding: 13px 8px;
+  font-size: 1.4rem;
 
-    ::placeholder {
-      color: ${(props) => props.theme.var9};
-    }
+  ::placeholder {
+    color: ${(props) => props.theme.var9};
   }
 
-  input:first-child {
-    margin-bottom: 1.8rem;
   }
-
+  
   .forgot-pass {
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    margin-top: 0.8rem;
-    margin-bottom: 1.8rem;
-    font-size: 1.2rem;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-top: 0.8rem;
+  margin-bottom: 1.8rem;
+  font-size: 1.2rem;
   }
 
   .field-sign {
-    font-weight: 700;
-    font-size: 1.4rem;
-    margin-bottom: 4rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
 
-    p {
-      margin-bottom: 1.8rem;
-    }
+  p {
+    margin-bottom: 1.8rem;
+  }
   }
 
   .field-btns {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
 
-    button[type="submit"] {
-      :hover {
-        background-color: ${(props) => props.theme.var1};
-      }
-    }
-    button[type="button"] {
+  button[type="submit"] {
     :hover {
-      background-color: ${(props) => props.theme.var8};
+    background-color: ${(props) => props.theme.var1};
     }
+  }
+  button[type="button"] {
+  :hover {
+    background-color: ${(props) => props.theme.var8};
+  }
   }
 `;
 
