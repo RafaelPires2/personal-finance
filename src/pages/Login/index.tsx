@@ -2,7 +2,7 @@ import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { Button, ButtonSubmit } from "../../components/button";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation";
 
 import {
   WrapperCardLogin,
@@ -11,25 +11,13 @@ import {
   Wrapper,
 } from "./styles";
 
-const schema = yup.object().shape({
-  email: yup
-    .string()
-    .required("O campo Email é obrigatório")
-    .email("Email precisa ser válido. Exemplo: email@gmail.com"),
-  password: yup
-    .string()
-    .required("O campo Senha é obrigatório")
-    .min(6, "A senha precisa ter no mínimo 6 caracteres")
-    .max(12, "A senha precisa ter no máximo 12 caracteres"),
-});
-
 export function Login() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
 
   const handleLogin = (data: any) => console.log(data);
@@ -43,13 +31,13 @@ export function Login() {
 
           <form onSubmit={handleSubmit(handleLogin)}>
             <input type="email" placeholder="Email" {...register("email")} />
-            <p className="message-error error1">{errors?.email?.message}</p>
+            <p className="message-error error1">{errors.email?.message}</p>
             <input
               type="password"
               placeholder="Senha"
               {...register("password")}
             />
-            <p className="message-error">{errors?.password?.message}</p>
+            <p className="message-error">{errors.password?.message}</p>
 
             <div className="forgot-pass">
               <p>Forgot your password?</p>
