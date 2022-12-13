@@ -2,7 +2,8 @@ import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { Button, ButtonSubmit } from "../../components/button";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation";
+import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
+import { useNavigate } from "react-router-dom";
 
 import {
   WrapperCardLogin,
@@ -20,7 +21,11 @@ export function Login() {
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
 
-  const handleLogin = (data: any) => console.log(data);
+  const navigate = useNavigate();
+
+  function handleLogin() {
+    navigate("/Dashboard");
+  }
 
   return (
     <Wrapper>
