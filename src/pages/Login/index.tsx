@@ -1,6 +1,6 @@
 import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
-import { Button, ButtonSubmit } from "../../components/button";
+import { Button, ButtonSubmit } from "../../components/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
@@ -11,31 +11,45 @@ import {
   CardLoginRight,
   Wrapper,
 } from "./styles";
+import { Header } from "../Header";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 export function Login() {
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
 
-  const navigate = useNavigate();
-
-  function handleLogin() {
-    navigate("/Dashboard");
-  }
+  const handleLogin = async (data: any) => {
+    if (data.email && data.password) {
+      const isLogged = await auth.signin(data.email, data.password);
+      if (isLogged) {
+        navigate("/dashboard");
+      } else {
+        alert("algo deu errado");
+      }
+      console.log(isLogged);
+    }
+  };
 
   return (
     <Wrapper>
+      <Header />
       <WrapperCardLogin>
         <CardLoginLeft>
           <h1>Sign In</h1>
           <p className="subtitulo">Its time to check Your business</p>
 
           <form onSubmit={handleSubmit(handleLogin)}>
-            <input type="email" placeholder="Email" {...register("email")} />
+            <input type="text" placeholder="Email" {...register("email")} />
             <p className="message-error error1">{errors.email?.message}</p>
             <input
               type="password"
