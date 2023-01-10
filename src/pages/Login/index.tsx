@@ -30,6 +30,7 @@ export function Login() {
 
   const handleLogin = async (data: any) => {
     if (data.email && data.password) {
+      
       const isLogged = await auth.signin(data.email, data.password);
       if (isLogged) {
         navigate("/dashboard");
