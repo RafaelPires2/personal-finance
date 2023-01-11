@@ -1,10 +1,12 @@
 {
   "name": "personal-finance",
+  "version": "0.0.0",
   "homepage": "https://rafaelpires2.github.io/personal-finance/",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -30,6 +32,7 @@
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.2.0",
     "eslint": "^8.29.0",
+    "gh-pages": "^4.0.0",
     "json-server": "^0.17.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3"
