@@ -15,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-color: ${(props) => props.theme.primary};
         color: ${(props) => props.theme.var5};
     }
 
