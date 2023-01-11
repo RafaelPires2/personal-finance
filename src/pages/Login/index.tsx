@@ -4,6 +4,9 @@ import { Button, ButtonSubmit } from "../../components/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../Header";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 import {
   WrapperCardLogin,
@@ -11,9 +14,6 @@ import {
   CardLoginRight,
   Wrapper,
 } from "./styles";
-import { Header } from "../Header";
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 export function Login() {
   const auth = useContext(AuthContext);
@@ -22,7 +22,7 @@ export function Login() {
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schemaValidationPasswordAndEmail),
@@ -30,12 +30,11 @@ export function Login() {
 
   const handleLogin = async (data: any) => {
     if (data.email && data.password) {
-      
       const isLogged = await auth.signin(data.email, data.password);
       if (isLogged) {
         navigate("/dashboard");
       } else {
-        alert("algo deu errado");
+        alert("Email ou Senha inválidos");
       }
       console.log(isLogged);
     }
@@ -51,12 +50,14 @@ export function Login() {
 
           <form onSubmit={handleSubmit(handleLogin)}>
             <input type="text" placeholder="Email" {...register("email")} />
+            {/* @ts-ignore */}
             <p className="message-error error1">{errors.email?.message}</p>
             <input
               type="password"
               placeholder="Senha"
               {...register("password")}
             />
+            {/* @ts-ignore */}
             <p className="message-error">{errors.password?.message}</p>
 
             <div className="forgot-pass">

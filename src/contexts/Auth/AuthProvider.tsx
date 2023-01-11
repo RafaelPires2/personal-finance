@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
   const [user, setUser] = useState<User | null>(null);
   const api = useApi();
 
-  // valida token e cria a persitencia do login
   useEffect(() => {
     const validateToken = async () => {
       const storageData = localStorage.getItem("authToken");
@@ -22,9 +21,14 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     validateToken();
   }, [api]);
 
+  const setToken = (token: string) => {
+    localStorage.setItem("authToken", token);
+  };
+
   const signin = async (email: string, password: string) => {
     const data = await api.signin(email, password);
     if (data.user && data.token) {
+      console.log(data);
       setUser(data.user);
       setToken(data.token);
       return true;
@@ -33,14 +37,9 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
   };
 
   const signout = async () => {
-    console.log("signout está sendo executado");
     setUser(null);
     setToken("");
     await api.logout();
-  };
-
-  const setToken = (token: string) => {
-    localStorage.setItem("authToken", token);
   };
 
   return (
