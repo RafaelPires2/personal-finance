@@ -10,6 +10,7 @@ interface ButtonProps {
   variant: ButtonVariant;
   textColor: TextButton;
   SizeW: WidthButton;
+  disabled: boolean;
 }
 
 export function ButtonSubmit({
@@ -17,6 +18,7 @@ export function ButtonSubmit({
   variant,
   textColor,
   SizeW,
+  disabled,
 }: ButtonProps) {
   return (
     <ButtonContainer
@@ -24,6 +26,7 @@ export function ButtonSubmit({
       SizeW={SizeW}
       textColor={textColor}
       variant={variant}
+      disabled={disabled}
     >
       {textContent}
     </ButtonContainer>
