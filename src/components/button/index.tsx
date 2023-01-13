@@ -10,7 +10,7 @@ interface ButtonProps {
   variant: ButtonVariant;
   textColor: TextButton;
   SizeW: WidthButton;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export function ButtonSubmit({

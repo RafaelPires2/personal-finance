@@ -5,9 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../Header";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../contexts/Auth/AuthContext";
-import user from "../../../mock/user.json";
+import { useState } from "react";
+// import { AuthContext } from "../../contexts/Auth/AuthContext";
+import user from "../../../mock/users.json";
 
 import {
   WrapperCardLogin,
@@ -21,7 +21,7 @@ export function Login() {
   // Esses estados foram criados para validação dos dados de usuario e senha e mostrar o erro.
   const [showError, setShowError] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
   const {
@@ -34,14 +34,14 @@ export function Login() {
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
 
-  function handleFormOnSubmit(data: any) {
-    setFormSubmitted(true);
-    if (data.email !== user.email || data.password !== user.password) {
+  const handleFormOnSubmit = async (data: any) => {
+    if (data.email === user.email && data.password === user.password) {
+      setFormSubmitted(true);
       setShowError(true);
     } else {
       navigate("/dashboard");
     }
-  }
+  };
 
   // const handleLogin = async (data: any) => {
   //   if (data.email && data.password) {
