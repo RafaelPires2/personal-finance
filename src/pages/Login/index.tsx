@@ -5,8 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../Header";
-import { useState } from "react";
-// import { AuthContext } from "../../contexts/Auth/AuthContext";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../contexts/Auth/AuthContext";
 import user from "../../../mock/users.json";
 
 import {
@@ -21,7 +21,7 @@ export function Login() {
   // Esses estados foram criados para validação dos dados de usuario e senha e mostrar o erro.
   const [showError, setShowError] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  // const auth = useContext(AuthContext);
+  const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
   const {
@@ -35,10 +35,13 @@ export function Login() {
   });
 
   const handleFormOnSubmit = async (data: any) => {
+    const isLogged = await auth.signin(data.email, data.password)
+
     if (data.email === user.email && data.password === user.password) {
       setFormSubmitted(true);
       setShowError(true);
     } else {
+      isLogged
       navigate("/dashboard");
     }
   };
