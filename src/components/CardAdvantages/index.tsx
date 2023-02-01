@@ -17,8 +17,6 @@ export function CardAdvantages({
         <img src={icon} alt="" />
         <h2>{title}</h2>
         <p>{paragraph}</p>
-
-        {/* <a href="https://google.com">What this?</a> */}
       </div>
     </ContainerCardAdvantages>
   );

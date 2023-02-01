@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components'
+import imgClock from "../../assets/clock.svg";
 
 export const Wrapper = styled.main`
   width: 100vw;
@@ -116,7 +117,6 @@ export const CardSocialApproval = styled.div`
         font-weight: 400;
         color: ${props => props.theme.var6};
     }
-    
     .img-clock{
         position: absolute;
         width:198px;
@@ -128,7 +128,6 @@ export const CardSocialApproval = styled.div`
         opacity: 0.7;
         z-index: -1;
 }
-    
 `;
 
 export const BoxUserImgName = styled.div`
@@ -150,7 +149,6 @@ export const BoxUserImgName = styled.div`
     color: ${props => props.theme.var6};
     }
 `;
-
 
 export const CardCreateAccountText = styled.div`
     width: 20rem;

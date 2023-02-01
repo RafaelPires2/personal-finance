@@ -7,8 +7,6 @@ export const WrapperHeader = styled.header`
 
   width: 100vw;
   height: 4.6rem;
-
-  //background-color: ${(props) => props.theme.var7};
 `;
 
 export const ContainerHeader = styled.header`
@@ -16,16 +14,16 @@ export const ContainerHeader = styled.header`
   justify-content: center;
   align-items: center;
   width: 120rem;
-  margin: 2.4rem 3.6rem;
+  margin-block: 2.4rem;
 
-  position: fixed;
+  position: absolute;
   top: 0;
 `;
 
 export const ContainerLink = styled.a`
-  margin-inline-start: 100px;
   a {
     font-size: 1.6rem;
+    font-weight: 500;
     margin: 2rem;
     color: ${(props) => props.theme.var2};
     text-decoration: none;
@@ -33,7 +31,7 @@ export const ContainerLink = styled.a`
 `;
 
 export const Title = styled.h1`
+  width: 60%;
   font-size: 3rem;
   color: ${(props) => props.theme.var2};
-  margin-right: 5rem;
 `;
