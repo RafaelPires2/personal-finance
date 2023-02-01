@@ -1,17 +1,22 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components'
 
+export const Wrapper = styled.main`
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const HomeWrapper = styled.div`
     width: 120rem;
-    height: calc(100vh - 4.6rem);
+    height: 100%;
     margin-top: 2rem;
-    
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-   // background-color: antiquewhite;
 `
 
 export const ContainerImageAndText = styled.section`
@@ -22,9 +27,6 @@ export const ContainerImageAndText = styled.section`
     height: 100%;
     padding-top: 8rem;
     gap: 2rem;
-
-   // background-color: aliceblue;
-
 `;
 
 export const ContainerA = styled.section`
@@ -169,3 +171,24 @@ export const CardCreateAccountText = styled.div`
     }    
 `;
 
+export const WrapperCardAdvantages = styled.div`
+    display: flex;
+    gap: 2rem;
+    margin: 4rem;
+`;
+
+export const SectionAdvantages = styled.div`
+    width: 100%;
+    height: 100%;
+    margin-top: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 1rem;
+
+    .title{
+        font-size: 4.8rem;
+    }
+`;

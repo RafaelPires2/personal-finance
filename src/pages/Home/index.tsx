@@ -1,9 +1,19 @@
 import { Button } from "../../components/Button";
 import { Header } from "../Header";
-import { Wrapper } from "../Login/styles";
+import {
+  SectionAdvantages,
+  Wrapper,
+  WrapperCardAdvantages,
+} from "../Home/styles";
 import imgPersonHome from "../../assets/img-person-home.svg";
 import imgUser from "../../assets/user1.svg";
 import imgClock from "../../assets/clock.svg";
+import imgAdvantages1 from "../../assets/icon-advantages1.svg";
+import imgAdvantages2 from "../../assets/icon-advantages2.svg";
+import imgAdvantages3 from "../../assets/icon-advantages3.svg";
+import imgAdvantages4 from "../../assets/icon-advantages4.svg";
+import { CardAdvantages } from "../../components/CardAdvantages";
+
 import {
   ContainerImageAndText,
   ContainerA,
@@ -41,14 +51,16 @@ export function Home() {
                   textColor="primary"
                   variant="btnVariant1"
                 />
-                <a href="http://localhost:3000/login">
-                  <Button
-                    textContent="Login"
-                    SizeW="122"
-                    textColor="secondary"
-                    variant="btnVariant2"
-                  />
-                </a>
+
+                <Button
+                  textContent="Login"
+                  SizeW="122"
+                  textColor="secondary"
+                  variant="btnVariant2"
+                  onClick={() =>
+                    window.open("http://localhost:3000/login", "_blank")
+                  }
+                />
               </div>
             </ContainerB>
             <ContainerC>
@@ -83,6 +95,36 @@ export function Home() {
               </CardCreateAccountText>
             </ContainerC>
           </ContainerImageAndText>
+
+          <SectionAdvantages>
+            <h1 className="title">Advantages of the bambook service</h1>
+
+            <WrapperCardAdvantages>
+              <CardAdvantages
+                icon={imgAdvantages1}
+                title="Doing business and accounting"
+                paragraph="This project was and will be the best for me among all the people I worked with. All because Bambook has a future and it is difficult to imagine a person who did not need this service. I put my soul into it"
+              />
+
+              <CardAdvantages
+                icon={imgAdvantages2}
+                title="Doing business and accounting"
+                paragraph="This project was and will be the best for me among all the people I worked with. All because Bambook has a future and it is difficult to imagine a person who did not need this service. I put my soul into it"
+              />
+
+              <CardAdvantages
+                icon={imgAdvantages3}
+                title="Doing business and accounting"
+                paragraph="This project was and will be the best for me among all the people I worked with. All because Bambook has a future and it is difficult to imagine a person who did not need this service. I put my soul into it"
+              />
+
+              <CardAdvantages
+                icon={imgAdvantages4}
+                title="Doing business and accounting"
+                paragraph="This project was and will be the best for me among all the people I worked with. All because Bambook has a future and it is difficult to imagine a person who did not need this service. I put my soul into it"
+              />
+            </WrapperCardAdvantages>
+          </SectionAdvantages>
         </HomeWrapper>
       </Wrapper>
     </>
