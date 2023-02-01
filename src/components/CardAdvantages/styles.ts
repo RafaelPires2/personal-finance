@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const ContainerCardAdvantages = styled.div`
   div {
     width: 27.8rem;
-    height: 45.2rem;
+    height: 37.2rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background-color: white;
     box-shadow: 10px 10px 40px rgba(192, 197, 233, 0.6);
@@ -16,6 +16,7 @@ export const ContainerCardAdvantages = styled.div`
 
   img {
     width: 8rem;
+    height: 8rem;
     margin-block: 4rem;
   }
   h2 {

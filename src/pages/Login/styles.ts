@@ -121,7 +121,7 @@ export const CardLoginLeft = styled(BaseCardLogin)`
   :hover {
     background-color: ${(props) => props.theme.var8};
   }
-  }
+}
 `;
 
 export const CardLoginRight = styled(BaseCardLogin)`

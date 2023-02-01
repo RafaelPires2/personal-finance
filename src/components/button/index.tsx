@@ -11,6 +11,7 @@ interface ButtonProps {
   textColor: TextButton;
   SizeW: WidthButton;
   disabled?: boolean;
+  onClick?: (event: MouseEvent) => void;
 }
 
 export function ButtonSubmit({

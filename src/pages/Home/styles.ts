@@ -185,7 +185,6 @@ export const SectionAdvantages = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: red;
     padding: 1rem;
 
     .title{

@@ -35,13 +35,13 @@ export function Login() {
   });
 
   const handleFormOnSubmit = async (data: any) => {
-    const isLogged = await auth.signin(data.email, data.password)
+    const isLogged = await auth.signin(data.email, data.password);
 
     if (data.email === user.email && data.password === user.password) {
       setFormSubmitted(true);
       setShowError(true);
     } else {
-      isLogged
+      isLogged;
       navigate("/dashboard");
     }
   };
