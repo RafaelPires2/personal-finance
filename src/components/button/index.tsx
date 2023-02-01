@@ -11,7 +11,7 @@ interface ButtonProps {
   textColor: TextButton;
   SizeW: WidthButton;
   disabled?: boolean;
-  onClick?: (event: MouseEvent) => void;
+  onClick?: () => void;
 }
 
 export function ButtonSubmit({
@@ -39,6 +39,7 @@ export function Button({
   variant,
   textColor,
   SizeW,
+  onClick,
 }: ButtonProps) {
   return (
     <ButtonContainer
@@ -46,6 +47,7 @@ export function Button({
       SizeW={SizeW}
       textColor={textColor}
       variant={variant}
+      onClick={onClick}
     >
       {textContent}
     </ButtonContainer>

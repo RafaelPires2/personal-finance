@@ -59,7 +59,7 @@ export function Home() {
                   textColor="secondary"
                   variant="btnVariant2"
                   onClick={() =>
-                    window.open("http://localhost:3000/login", "_blank")
+                    window.open("http://localhost:3000/login", "_self")
                   }
                 />
               </div>
@@ -67,7 +67,7 @@ export function Home() {
             <ContainerC>
               <CardSocialApproval>
                 <BoxUserImgName>
-                  <img src={imgUser} />
+                  <img src={imgUser} alt="" />
                   <div>
                     <h2>Guilherme Pierre</h2>
                     <p>Art Director / UX / UI / Strategy manager</p>
@@ -80,7 +80,7 @@ export function Home() {
                   onde posso economizar dinheiro. Além disso, a plataforma é
                   fácil de usar e tem muitos recursos úteis.
                 </p>
-                <img className="img-clock" src={imgClock} />
+                <img className="img-clock" src={imgClock} alt="" />
               </CardSocialApproval>
               <CardCreateAccountText>
                 <span>01.</span>
