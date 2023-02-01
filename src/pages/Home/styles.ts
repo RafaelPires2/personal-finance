@@ -90,23 +90,14 @@ export const ContainerC = styled.section`
     flex-direction: row; 
     width: 100%;
 
-    .img-clock{
-        position: absolute;
-        width:198px;
-        left: 37.22%;
-        right: 0.03%;
-        top: 90.62%;
-        bottom: 69.63%;
-
-        opacity: 0.7;
-        z-index: -1;
-}
+    
      
 `;
 
 export const CardSocialApproval = styled.div`
     display: flex;
     flex-direction: column;
+    position: relative;
     
     width: 44.2rem;
     height: 20rem;
@@ -125,26 +116,41 @@ export const CardSocialApproval = styled.div`
         font-weight: 400;
         color: ${props => props.theme.var6};
     }
-    .box-user-img-name{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        gap: 2.4rem;
-        margin-bottom: 1.6rem;
+    
+    .img-clock{
+        position: absolute;
+        width:198px;
+        left: 77.22%;
+        right: 0.03%;
+        top: 70.62%;
+        bottom: 69.63%;
 
-       h2{
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: ${props => props.theme.var5};
-       }
-       p{
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: ${props => props.theme.var6};
-       }
+        opacity: 0.7;
+        z-index: -1;
+}
+    
+`;
 
+export const BoxUserImgName = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 2.4rem;
+    margin-bottom: 1.6rem;
+
+    h2{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: ${props => props.theme.var5};
+    }
+
+    p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: ${props => props.theme.var6};
     }
 `;
+
 
 export const CardCreateAccountText = styled.div`
     width: 20rem;

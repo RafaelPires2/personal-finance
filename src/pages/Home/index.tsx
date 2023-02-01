@@ -1,6 +1,7 @@
 import { Button } from "../../components/Button";
 import { Header } from "../Header";
 import {
+  BoxUserImgName,
   SectionAdvantages,
   Wrapper,
   WrapperCardAdvantages,
@@ -65,13 +66,13 @@ export function Home() {
             </ContainerB>
             <ContainerC>
               <CardSocialApproval>
-                <div className="box-user-img-name">
+                <BoxUserImgName>
                   <img src={imgUser} />
                   <div>
                     <h2>Guilherme Pierre</h2>
                     <p>Art Director / UX / UI / Strategy manager</p>
                   </div>
-                </div>
+                </BoxUserImgName>
 
                 <p>
                   Eu tenho usado o MyFinance há alguns meses e tem sido
@@ -79,8 +80,8 @@ export function Home() {
                   onde posso economizar dinheiro. Além disso, a plataforma é
                   fácil de usar e tem muitos recursos úteis.
                 </p>
+                <img className="img-clock" src={imgClock} />
               </CardSocialApproval>
-              <img className="img-clock" src={imgClock} />
               <CardCreateAccountText>
                 <span>01.</span>
                 <p>Crie sua conta grátis no MyFinance</p>
