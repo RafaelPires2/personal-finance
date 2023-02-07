@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "../Header";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
-import user from "../../../mock/users.json";
+// import user from "../../../mock/users.json";
 
 import {
   WrapperCardLogin,
@@ -34,29 +34,31 @@ export function Login() {
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
 
-  const handleFormOnSubmit = async (data: any) => {
-    const isLogged = await auth.signin(data.email, data.password);
+  // const handleFormOnSubmit = async (data: any) => {
+  //   const isLogged = await auth.signin(data.email, data.password);
 
-    if (data.email === user.email && data.password === user.password) {
-      setFormSubmitted(true);
-      setShowError(true);
-    } else {
-      isLogged;
-      navigate("/dashboard");
-    }
-  };
-
-  // const handleLogin = async (data: any) => {
-  //   if (data.email && data.password) {
-  //     const isLogged = await auth.signin(data.email, data.password);
-  //     if (isLogged) {
-  //       navigate("/dashboard");
-  //     } else {
-  //       alert("Email ou Senha inválidos");
-  //     }
-  //     console.log(isLogged);
+  //   if (data.email === user.email && data.password === user.password) {
+  //     setFormSubmitted(true);
+  //     setShowError(true);
+  //   } else {
+  //     isLogged;
+  //     navigate("/dashboard");
   //   }
   // };
+
+  const handleLogin = async (data: any) => {
+    if (data.email && data.password) {
+      const isLogged = await auth.signin(data.email, data.password);
+      if (isLogged) {
+        navigate("/dashboard");
+      } else {
+        setFormSubmitted(true);
+        setShowError(true);
+        alert("Email ou Senha inválidos");
+      }
+      console.log(isLogged);
+    }
+  };
 
   // monitora os campos email e password enquanto são preenchidos
   const checkFilling = watch(["email", "password"]);
@@ -79,7 +81,7 @@ export function Login() {
           <h1>Sign In</h1>
           <p className="subtitulo">Its time to check Your business</p>
 
-          <form onSubmit={handleSubmit(handleFormOnSubmit)}>
+          <form onSubmit={handleSubmit(handleLogin)}>
             <input type="text" placeholder="Email" {...register("email")} />
             {/* @ts-ignore */}
             <p className="message-error error1">{errors.email?.message}</p>

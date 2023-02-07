@@ -1,6 +1,5 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components'
-import imgClock from "../../assets/clock.svg";
 
 export const Wrapper = styled.main`
   width: 100vw;

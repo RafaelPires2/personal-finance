@@ -20,7 +20,7 @@ export const ContainerHeader = styled.header`
   top: 0;
 `;
 
-export const ContainerLink = styled.a`
+export const ContainerLink = styled.nav`
   a {
     font-size: 1.6rem;
     font-weight: 500;
