@@ -1,17 +1,18 @@
 # My Personal Finance
 
-<h1> <img width="900px" src="./src/assets/page-login.jpg" /> </h1>
+<h1> <img width="900px" src="./public/img-my-finance.png" /> </h1>
 
-## <a href="https://google.com">See the Site</a>
+## <a href="">See the Site</a>
+
 <br>
 
 ## 📕 About
+
 <br>
 
 Personal finance system for cash flow control and management
 <br>
 <br>
-
 
 ## 🔨 Tools
 
@@ -22,42 +23,49 @@ Personal finance system for cash flow control and management
 - MySQL
 - Yup
 - Axios
-<br>
-<br>
+- Hash - BCrypt
+  <br>
+  <br>
 
 ## 🔨 Progress
 
 - [x] Login
+- [ ] Home
 - [ ] Dashboard
-- [ ] API CRUD
-- [ ] DB MySQL
+- [x] API CRUD
+- [x] API Login
+- [x] DB MySQL
 
 ## How Clone Projects
+
 <br>
 
-```bash 
+```bash
 #Clone the project
 $git clone https://github.com/RafaelPires2/myPersonalFinance.git
 ```
 
-```bash 
+```bash
 #enter directory
 $ cd myPersonalFinance
 ```
 
-```bash 
+```bash
 #enter install the dependencies, if use npm
 $ npm install
 ```
+
 <p align="center">Or</p>
 
-```bash 
+```bash
 #enter install the dependencies, if use yarn
 $ yarn
 ```
+
 <br>
 
 ## 📄 License
+
 <br>
 
 This project is under the MIT license. See the LICENSE file for details. [LICENSE](https://docs.github.com/pt/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
