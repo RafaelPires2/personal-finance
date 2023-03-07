@@ -1,5 +1,6 @@
 import { Button } from "../../components/Button";
 import { Header } from "../Header";
+import { Footer } from "../../components/Footer";
 import {
   BoxUserImgName,
   SectionAdvantages,
@@ -59,7 +60,7 @@ export function Home() {
                   textColor="secondary"
                   variant="btnVariant2"
                   onClick={() =>
-                    window.open("http://localhost:3000/login", "_self")
+                    window.open("http://localhost:3001/login", "_self")
                   }
                 />
               </div>
@@ -126,6 +127,8 @@ export function Home() {
               />
             </WrapperCardAdvantages>
           </SectionAdvantages>
+
+          <Footer />
         </HomeWrapper>
       </Wrapper>
     </>

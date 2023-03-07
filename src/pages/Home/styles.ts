@@ -180,7 +180,7 @@ export const WrapperCardAdvantages = styled.div`
     margin: 4rem;
 `;
 
-export const SectionAdvantages = styled.div`
+export const SectionAdvantages = styled.section`
     width: 100%;
     height: 100%;
     margin-top: 14rem;
