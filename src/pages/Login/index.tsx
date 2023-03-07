@@ -7,8 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "../Header";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
-// import user from "../../../mock/users.json";
-
+import { CustomInput } from "../../components/CustomInput";
 import {
   WrapperCardLogin,
   CardLoginLeft,
@@ -18,10 +17,11 @@ import {
 
 export function Login() {
   const [validated, setValidated] = useState(false);
+  const auth = useContext(AuthContext);
   // Esses estados foram criados para validação dos dados de usuario e senha e mostrar o erro.
   const [showError, setShowError] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
   const {
@@ -34,36 +34,23 @@ export function Login() {
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
 
-  // const handleFormOnSubmit = async (data: any) => {
-  //   const isLogged = await auth.signin(data.email, data.password);
-
-  //   if (data.email === user.email && data.password === user.password) {
-  //     setFormSubmitted(true);
-  //     setShowError(true);
-  //   } else {
-  //     isLogged;
-  //     navigate("/dashboard");
-  //   }
-  // };
-
   const handleLogin = async (data: any) => {
     if (data.email && data.password) {
       const isLogged = await auth.signin(data.email, data.password);
       if (isLogged) {
-        navigate("/dashboard");
+        return navigate("/dashboard");
       } else {
         setFormSubmitted(true);
         setShowError(true);
-        alert("Email ou Senha inválidos");
+        return alert("Email ou Senha inválidos");
       }
-      console.log(isLogged);
     }
   };
 
   // monitora os campos email e password enquanto são preenchidos
   const checkFilling = watch(["email", "password"]);
 
-  // verifica se os campos preenchidos são válidos, função usada para desabilitar e abilitar o botão entrar
+  // verifica se os campos preenchidos são válidos, função usada para desabilitar e habilitar o botão entrar
   schemaValidationPasswordAndEmail
     .isValid({ email: checkFilling[0], password: checkFilling[1] })
     .then((valid) => {
@@ -82,12 +69,17 @@ export function Login() {
           <p className="subtitulo">Its time to check Your business</p>
 
           <form onSubmit={handleSubmit(handleLogin)}>
-            <input type="text" placeholder="Email" {...register("email")} />
+            <CustomInput
+              type="text"
+              placeholder="Email"
+              {...register("email")}
+            />
             {/* @ts-ignore */}
             <p className="message-error error1">{errors.email?.message}</p>
-            <input
+            <CustomInput
               type="password"
               placeholder="Senha"
+              // capturar as mudanças usando o register
               {...register("password")}
             />
             {/* @ts-ignore */}
