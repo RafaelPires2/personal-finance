@@ -6,10 +6,10 @@ import {
 } from "./styles";
 
 interface ButtonProps {
-  textContent: string;
-  variant: ButtonVariant;
-  textColor: TextButton;
-  SizeW: WidthButton;
+  textContent?: string;
+  variant?: ButtonVariant;
+  textColor?: TextButton;
+  SizeW?: WidthButton;
   disabled?: boolean;
   onClick?: () => void;
 }

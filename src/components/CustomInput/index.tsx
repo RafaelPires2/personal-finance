@@ -1,16 +1,16 @@
 import { forwardRef, InputHTMLAttributes } from "react";
-import { ImputContainer } from "./styles";
+import { InputContainer } from "./styles";
 
-interface CustomImputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
 // capturar as mudanças usando register
 function CustomInputBase(
-  { type, placeholder, ...props }: CustomImputProps,
+  { type, placeholder, ...props }: CustomInputProps,
   ref: any
 ) {
   return (
     <>
-      <ImputContainer
+      <InputContainer
         type={type}
         placeholder={placeholder}
         {...props}

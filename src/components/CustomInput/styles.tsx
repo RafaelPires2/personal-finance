@@ -1,9 +1,9 @@
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface ImputContainerProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface InputContainerProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-export const ImputContainer = styled.input<ImputContainerProps>`
+export const InputContainer = styled.input<InputContainerProps>`
     width: 32rem;
     height: 4rem;
     border: 1px solid ${(props) => props.theme.var9};
@@ -14,4 +14,4 @@ export const ImputContainer = styled.input<ImputContainerProps>`
     margin-block: 1rem ;
     ::placeholder {
       color: ${(props) => props.theme.var9}
-`;
+`

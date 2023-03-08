@@ -1,6 +1,6 @@
 import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
-import { Button, ButtonSubmit } from "../../components/Button";
+// import { Button, ButtonSubmit } from "../../components/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ import {
   CardLoginRight,
   Wrapper,
 } from "./styles";
+import { CustomButton } from "../../components/CustomButton";
 
 export function Login() {
   const [validated, setValidated] = useState(false);
@@ -42,7 +43,7 @@ export function Login() {
       } else {
         setFormSubmitted(true);
         setShowError(true);
-        return alert("Email ou Senha inválidos");
+        return alert("Login failed");
       }
     }
   };
@@ -96,18 +97,23 @@ export function Login() {
               <FcGoogle size={32} />
             </div>
             <div className="field-btns">
-              <ButtonSubmit
-                SizeW="103"
-                textColor="primary"
-                textContent="Sign In"
+              <CustomButton
+                width="103"
+                height="40"
                 variant="btnVariant1"
+                textColor="white"
+                content="Login"
+                type="submit"
                 disabled={!validated}
               />
-              <Button
-                SizeW="160"
-                textColor="secondary"
-                textContent="Sign Up"
+
+              <CustomButton
+                width="150"
+                height="40"
                 variant="btnVariant2"
+                textColor="#BDBDBD"
+                content="Criar Conta"
+                type="button"
               />
             </div>
           </form>

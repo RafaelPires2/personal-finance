@@ -37,7 +37,6 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   font-size: 1.4rem;
   padding: 1.5rem;
   cursor: pointer;
-  
 
   ${(props) => {
     return `color: ${buttonVariants[props.textColor]}

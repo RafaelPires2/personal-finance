@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CustomButton } from "../../components/CustomButton";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
 import { ContainerHeader, ContainerLink, Title, WrapperHeader } from "./styles";
 
@@ -21,7 +22,17 @@ export function Header() {
           <Link to="/login">Login</Link>
           <Link to="/dashboard">DashBoard</Link>
         </ContainerLink>
-        {auth.user && <button onClick={handleLogout}>Sair</button>}
+        {auth.user && (
+          <CustomButton
+            width="50"
+            height="35"
+            variant="btnVariant3"
+            textColor="white"
+            content="Sair"
+            type="button"
+            onClick={handleLogout}
+          ></CustomButton>
+        )}
       </ContainerHeader>
     </WrapperHeader>
   );
