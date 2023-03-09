@@ -64,10 +64,6 @@ export const CardLoginLeft = styled(BaseCardLogin)`
     margin-bottom: 1.6rem;
   }
 
-  .error1 {
-  //  margin-bottom: 1.8rem;
-  }
-
   .forgot-pass {
     width: 100%;
     display: flex;

@@ -1,4 +1,3 @@
-import { Button } from "../../components/Button";
 import { Header } from "../Header";
 import { Footer } from "../../components/Footer";
 import {
@@ -25,6 +24,7 @@ import {
   CardCreateAccountText,
   CardSocialApproval,
 } from "./styles";
+import { CustomButton } from "../../components/CustomButton";
 export function Home() {
   return (
     <>
@@ -47,18 +47,25 @@ export function Home() {
                 Transforme sua vida financeira agora. Cadastre-se gratuitamente
               </p>
               <div className="containerButton">
-                <Button
-                  textContent="Criar Conta"
-                  SizeW="192"
-                  textColor="primary"
+                <CustomButton
+                  width="192"
+                  height="40"
                   variant="btnVariant1"
+                  textColor="white"
+                  content="Criar Conta"
+                  type="button"
+                  onClick={() =>
+                    window.open("http://localhost:3001/register", "_self")
+                  }
                 />
 
-                <Button
-                  textContent="Login"
-                  SizeW="122"
-                  textColor="secondary"
+                <CustomButton
+                  width="122"
+                  height="40"
                   variant="btnVariant2"
+                  textColor="#BDBDBD"
+                  content="Login"
+                  type="button"
                   onClick={() =>
                     window.open("http://localhost:3001/login", "_self")
                   }

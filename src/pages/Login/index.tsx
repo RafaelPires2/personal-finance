@@ -1,6 +1,5 @@
 import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
-// import { Button, ButtonSubmit } from "../../components/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
@@ -114,6 +113,9 @@ export function Login() {
                 textColor="#BDBDBD"
                 content="Criar Conta"
                 type="button"
+                onClick={() =>
+                  window.open("http://localhost:3001/register", "_self")
+                }
               />
             </div>
           </form>

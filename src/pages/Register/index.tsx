@@ -114,6 +114,9 @@ export function Register() {
                 textColor="#BDBDBD"
                 content="Login"
                 type="button"
+                onClick={() =>
+                  window.open("http://localhost:3001/login", "_self")
+                }
               />
             </div>
           </form>

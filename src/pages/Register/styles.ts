@@ -81,11 +81,10 @@ export const CardLoginLeft = styled(BaseCardLogin)`
     gap: 2.2rem;
 
     button[type="submit"] {
-      :disabled {
-        cursor: not-allowed;
-      }
-      :not(:disabled) {
+      
+       :hover{
         background-color: ${(props) => props.theme.var1};
+       } 
       }
     }
 
