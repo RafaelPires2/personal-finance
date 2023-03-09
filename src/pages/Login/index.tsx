@@ -98,7 +98,7 @@ export function Login() {
             </div>
             <div className="field-btns">
               <CustomButton
-                width="103"
+                width="138"
                 height="40"
                 variant="btnVariant1"
                 textColor="white"
@@ -108,7 +108,7 @@ export function Login() {
               />
 
               <CustomButton
-                width="150"
+                width="160"
                 height="40"
                 variant="btnVariant2"
                 textColor="#BDBDBD"

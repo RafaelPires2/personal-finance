@@ -8,8 +8,8 @@ type ButtonContainerProps = {
   height: string;
   textColor: string;
   content: string;
-  variant: string;
-  type: any;
+  variant: any;
+  type: "submit" | "button" | "reset";
 } & ButtonTypeProps;
 
 export function CustomButton({
@@ -17,6 +17,7 @@ export function CustomButton({
   height,
   textColor,
   content,
+  type,
   ...props
 }: ButtonContainerProps) {
   return (
@@ -25,6 +26,7 @@ export function CustomButton({
         width={width}
         height={height}
         textColor={textColor}
+        type={type}
         {...props}
       >
         {content}

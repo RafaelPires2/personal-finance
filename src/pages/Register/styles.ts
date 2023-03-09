@@ -60,7 +60,8 @@ export const CardLoginLeft = styled(BaseCardLogin)`
   .message-error {
     font-size: 1.2rem;
     color: red;
-    margin-block: 0.4rem;
+    margin-top: -1rem;
+    margin-bottom: 1.6rem;
   }
 
   .forgot-pass {

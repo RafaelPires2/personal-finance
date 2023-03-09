@@ -11,7 +11,7 @@ export const InputContainer = styled.input<InputContainerProps>`
 
     padding: 13px 8px;
     font-size: 1.4rem;
-    margin-block: 1rem ;
+    margin-bottom: 1.6rem ;
     ::placeholder {
       color: ${(props) => props.theme.var9}
 `

@@ -1,6 +1,5 @@
 import { AiOutlineCheckCircle } from "react-icons/all";
 import { useForm } from "react-hook-form";
-import { Button, ButtonSubmit } from "../../components/Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +14,7 @@ import {
   CardLoginRight,
   Wrapper,
 } from "./styles";
+import { CustomButton } from "../../components/CustomButton";
 
 export function Register() {
   const [validated, setValidated] = useState(false);
@@ -34,23 +34,22 @@ export function Register() {
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
 
-  // const handleLogin = async (data: any) => {
-  //   if (data.email && data.password) {
-  //     const isLogged = await auth.signin(data.email, data.password);
-  //     if (isLogged) {
-  //       navigate("/dashboard");
-  //     } else {
-  //       setFormSubmitted(true);
-  //       setShowError(true);
-  //       alert("Email ou Senha inválidos");
-  //     }
-  //     console.log(isLogged);
-  //   }
-  // };
-
   // monitora os campos email e password enquanto são preenchidos
-  const checkFilling = watch(["email", "password"]);
-  console.log(checkFilling);
+  const checkFilling = watch(["name", "email", "password"]);
+
+  const handleRegister = async (data: any) => {
+    const newUser = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    };
+    if (newUser) {
+      await auth.register(data.name, data.email, data.password);
+      return alert("Usuário cadastrado com sucesso");
+    } else {
+      return alert("Não cadastrado");
+    }
+  };
 
   // verifica se os campos preenchidos são válidos, função usada para desabilitar e habilitar o botão entrar
   schemaValidationPasswordAndEmail
@@ -70,13 +69,13 @@ export function Register() {
           <h1>Register</h1>
           <p className="subtitulo">Its time to check Your business</p>
 
-          <form onSubmit={handleSubmit(handleLogin)}>
+          <form onSubmit={handleSubmit(handleRegister)}>
             <CustomInput
               type="text"
               placeholder="Digite seu nome"
-              // capturar as mudanças usando o register
               {...register("name")}
             />
+            <p className="message-error error1">{errors.name?.message}</p>
             <CustomInput
               type="text"
               placeholder="Email"
@@ -87,7 +86,6 @@ export function Register() {
             <CustomInput
               type="password"
               placeholder="Senha"
-              // capturar as mudanças usando o register
               {...register("password")}
             />
             {/* @ts-ignore */}
@@ -100,18 +98,22 @@ export function Register() {
               <p>Aceito os termos</p>
             </div>
             <div className="field-btns">
-              <ButtonSubmit
-                SizeW="103"
-                textColor="primary"
-                textContent="Criar"
+              <CustomButton
+                width="138"
+                height="40"
                 variant="btnVariant1"
-                disabled={!validated}
+                textColor="white"
+                content="Criar Conta"
+                type="submit"
               />
-              <Button
-                SizeW="160"
-                textColor="secondary"
-                textContent="Login"
+
+              <CustomButton
+                width="160"
+                height="40"
                 variant="btnVariant2"
+                textColor="#BDBDBD"
+                content="Login"
+                type="button"
               />
             </div>
           </form>
