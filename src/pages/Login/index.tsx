@@ -2,7 +2,7 @@ import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Header } from "../Header";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
@@ -21,7 +21,6 @@ export function Login() {
   // Esses estados foram criados para validação dos dados de usuario e senha e mostrar o erro.
   const [showError, setShowError] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  // const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
   const {
@@ -33,19 +32,6 @@ export function Login() {
     mode: "onChange",
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
-
-  const handleLogin = async (data: any) => {
-    if (data.email && data.password) {
-      const isLogged = await auth.signin(data.email, data.password);
-      if (isLogged) {
-        return navigate("/dashboard");
-      } else {
-        setFormSubmitted(true);
-        setShowError(true);
-        return alert("Login failed");
-      }
-    }
-  };
 
   // monitora os campos email e password enquanto são preenchidos
   const checkFilling = watch(["email", "password"]);
@@ -60,12 +46,21 @@ export function Login() {
       }
     });
 
+  const handleLogin = async (data: any) => {
+    const isLogged = await auth.signin(data.email, data.password);
+    if (isLogged) {
+      return navigate("/dashboard");
+    } else {
+      setFormSubmitted(true);
+      setShowError(true);
+    }
+  };
   return (
     <Wrapper>
       <Header />
       <WrapperCardLogin>
         <CardLoginLeft>
-          <h1>Sign In</h1>
+          <h1 className="title">Sign In</h1>
           <p className="subtitulo">Its time to check Your business</p>
 
           <form onSubmit={handleSubmit(handleLogin)}>
@@ -75,15 +70,14 @@ export function Login() {
               {...register("email")}
             />
             {/* @ts-ignore */}
-            <p className="message-error error1">{errors.email?.message}</p>
+            {/* <p className="message-error">{errors.email?.message}</p> */}
             <CustomInput
               type="password"
               placeholder="Senha"
-              // capturar as mudanças usando o register
               {...register("password")}
             />
             {/* @ts-ignore */}
-            <p className="message-error">{errors.password?.message}</p>
+            {/* <p className="message-error">{errors.password?.message}</p> */}
             <p className="message-error">
               {formSubmitted && showError && "Email ou Senha inválidos"}
             </p>
@@ -113,9 +107,7 @@ export function Login() {
                 textColor="#BDBDBD"
                 content="Criar Conta"
                 type="button"
-                onClick={() =>
-                  window.open("http://localhost:3001/register", "_self")
-                }
+                link="/register"
               />
             </div>
           </form>

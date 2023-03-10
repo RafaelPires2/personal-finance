@@ -14,15 +14,14 @@ export const GlobalStyle = createGlobalStyle`
         outline: 0;
     }
 
-    body{
-        color: ${(props) => props.theme.var5};
+    body, input, textarea, button, a {
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+        list-style: none;
+        color: inherit;
     }
 
-    body, input, textarea, button {
-        font-family: 'Roboto', sans-serif;
-    }
-    
-    a{
-        text-decoration: none;
+    body{
+        color: ${(props) => props.theme.var5};
     }
 `;

@@ -13,4 +13,6 @@ export const defaultTheme = {
   var8: "#E9E8F0",
   var9: "#aeb4dd",
   var10: "#5B8F7D",
+
+  textTitle: "#524C6F",
 };

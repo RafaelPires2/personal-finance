@@ -49,8 +49,9 @@ export const CardLoginLeft = styled(BaseCardLogin)`
     font-weight: 500;
   }
 
-  h1 {
+  .title {
     font-size: 3.6rem;
+    color: ${(props) => props.theme.textTitle};
   }
   .subtitulo {
     font-size: 1.4rem;
