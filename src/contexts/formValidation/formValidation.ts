@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-export const schemaValidationPasswordAndEmail = yup.object().shape({
+const schemaBase = {
   email: yup
     .string()
     .required("O campo Email é obrigatório")
@@ -14,4 +14,11 @@ export const schemaValidationPasswordAndEmail = yup.object().shape({
       /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W+)(?=^.{6,20}$).*$/,
       "A senha deve conter 1 letra maiúscula 1 minúscula 1 número 1 caracter especial !@#$% etc..."
     ),
+};
+
+export const schemaValidationPasswordAndEmail = yup.object().shape(schemaBase);
+
+export const schemaValidationNameAndPasswordAndEmail = yup.object().shape({
+  ...schemaBase,
+  name: yup.string().required("O campo Nome é obrigatório"),
 });

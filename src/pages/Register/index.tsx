@@ -1,7 +1,7 @@
 import { AiOutlineCheckCircle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
+import { schemaValidationNameAndPasswordAndEmail } from "../../contexts/formValidation/formValidation";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../Header";
 import { useContext, useState } from "react";
@@ -31,7 +31,7 @@ export function Register() {
     formState: { errors },
   } = useForm({
     mode: "onChange",
-    resolver: yupResolver(schemaValidationPasswordAndEmail),
+    resolver: yupResolver(schemaValidationNameAndPasswordAndEmail),
   });
 
   // monitora os campos email e password enquanto são preenchidos
@@ -45,14 +45,15 @@ export function Register() {
     };
     if (newUser) {
       await auth.register(data.name, data.email, data.password);
-      return alert("Usuário cadastrado com sucesso");
+      alert("Usuário cadastrado com sucesso");
+      return navigate("/login");
     } else {
       return alert("Não cadastrado");
     }
   };
 
   // verifica se os campos preenchidos são válidos, função usada para desabilitar e habilitar o botão entrar
-  schemaValidationPasswordAndEmail
+  schemaValidationNameAndPasswordAndEmail
     .isValid({ email: checkFilling[0], password: checkFilling[1] })
     .then((valid) => {
       if (valid) setValidated(true);
@@ -66,7 +67,7 @@ export function Register() {
       <Header />
       <WrapperCardLogin>
         <CardLoginLeft>
-          <h1>Register</h1>
+          <h1 className="title">Register</h1>
           <p className="subtitulo">Its time to check Your business</p>
 
           <form onSubmit={handleSubmit(handleRegister)}>
@@ -75,6 +76,7 @@ export function Register() {
               placeholder="Digite seu nome"
               {...register("name")}
             />
+            {/* @ts-ignore */}
             <p className="message-error error1">{errors.name?.message}</p>
             <CustomInput
               type="text"
@@ -114,9 +116,7 @@ export function Register() {
                 textColor="#BDBDBD"
                 content="Login"
                 type="button"
-                onClick={() =>
-                  window.open("http://localhost:3001/login", "_self")
-                }
+                link="/login"
               />
             </div>
           </form>
