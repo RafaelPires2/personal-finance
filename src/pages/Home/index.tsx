@@ -54,9 +54,7 @@ export function Home() {
                   textColor="white"
                   content="Criar Conta"
                   type="button"
-                  onClick={() =>
-                    window.open("http://localhost:3001/register", "_self")
-                  }
+                  link="/register"
                 />
 
                 <CustomButton
@@ -66,9 +64,7 @@ export function Home() {
                   textColor="#BDBDBD"
                   content="Login"
                   type="button"
-                  onClick={() =>
-                    window.open("http://localhost:3001/login", "_self")
-                  }
+                  link="/login"
                 />
               </div>
             </ContainerB>
