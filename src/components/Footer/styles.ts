@@ -23,6 +23,7 @@ export const Title = styled.h1`
   font-size: 3rem;
   color: ${(props) => props.theme.white};
 `;
+
 export const ContainerIcons = styled.div`
   display: flex;
   align-items: center;

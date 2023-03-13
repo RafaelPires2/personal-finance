@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Dashboard } from "./pages/Dashboard";
-import { RequireAuth } from "./contexts/Auth/RequireAuth";
+// import { RequireAuth } from "./contexts/Auth/RequireAuth";
 import { Register } from "./pages/Register";
 
 export function Router() {
@@ -14,11 +14,12 @@ export function Router() {
       <Route path="/Register" element={<Register />} />
       <Route
         path="/dashboard"
-        element={
-          <RequireAuth>
-            <Dashboard />
-          </RequireAuth>
-        }
+        element={<Dashboard />}
+        // element={
+        //   <RequireAuth>
+        //     <Dashboard />
+        //   </RequireAuth>
+        // }
       />
     </Routes>
   );
