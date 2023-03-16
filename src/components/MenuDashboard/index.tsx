@@ -18,8 +18,11 @@ import {
   TbDeviceAnalytics,
   FaRegMoon,
 } from "react-icons/all";
+// import { Switch } from "@mui/material";
 
 export const MenuDashboard = () => {
+  // const label = { inputProps: { "aria-label": "Switch demo" } };
+
   return (
     <>
       <ContainerAsideDashboard>
@@ -68,6 +71,8 @@ export const MenuDashboard = () => {
           <FaRegMoon size={24} />
           Dark Mode
         </ContainerToggle>
+
+        {/* <Switch {...label} defaultChecked /> */}
 
         <ContainerUser>
           <img

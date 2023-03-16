@@ -2,7 +2,7 @@ import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Header } from "../Header";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
@@ -23,12 +23,7 @@ export function Login() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit, watch } = useForm({
     mode: "onChange",
     resolver: yupResolver(schemaValidationPasswordAndEmail),
   });
@@ -69,15 +64,11 @@ export function Login() {
               placeholder="Email"
               {...register("email")}
             />
-            {/* @ts-ignore */}
-            {/* <p className="message-error">{errors.email?.message}</p> */}
             <CustomInput
               type="password"
               placeholder="Senha"
               {...register("password")}
             />
-            {/* @ts-ignore */}
-            {/* <p className="message-error">{errors.password?.message}</p> */}
             <p className="message-error">
               {formSubmitted && showError && "Email ou Senha inválidos"}
             </p>
