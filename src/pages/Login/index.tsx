@@ -2,7 +2,7 @@ import { AiOutlineCheckCircle, FcGoogle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationPasswordAndEmail } from "../../contexts/formValidation/formValidation";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Header } from "../Header";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
@@ -90,16 +90,16 @@ export function Login() {
                 type="submit"
                 disabled={!validated}
               />
-
-              <CustomButton
-                width="160"
-                height="40"
-                variant="btnVariant2"
-                textColor="#BDBDBD"
-                content="Criar Conta"
-                type="button"
-                link="/register"
-              />
+              <Link to="/register">
+                <CustomButton
+                  width="160"
+                  height="40"
+                  variant="btnVariant2"
+                  textColor="#BDBDBD"
+                  content="Criar Conta"
+                  type="button"
+                />
+              </Link>
             </div>
           </form>
         </CardLoginLeft>

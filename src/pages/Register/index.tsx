@@ -2,7 +2,7 @@ import { AiOutlineCheckCircle } from "react-icons/all";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaValidationNameAndPasswordAndEmail } from "../../contexts/formValidation/formValidation";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Header } from "../Header";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
@@ -109,15 +109,16 @@ export function Register() {
                 type="submit"
               />
 
-              <CustomButton
-                width="160"
-                height="40"
-                variant="btnVariant2"
-                textColor="#BDBDBD"
-                content="Login"
-                type="button"
-                link="/login"
-              />
+              <Link to="/login">
+                <CustomButton
+                  width="160"
+                  height="40"
+                  variant="btnVariant2"
+                  textColor="#BDBDBD"
+                  content="Login"
+                  type="button"
+                />
+              </Link>
             </div>
           </form>
         </CardLoginLeft>

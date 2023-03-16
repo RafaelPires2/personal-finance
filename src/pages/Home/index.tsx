@@ -25,6 +25,7 @@ import {
   CardSocialApproval,
 } from "./styles";
 import { CustomButton } from "../../components/CustomButton";
+import { Link } from "react-router-dom";
 export function Home() {
   return (
     <>
@@ -47,25 +48,27 @@ export function Home() {
                 Transforme sua vida financeira agora. Cadastre-se gratuitamente
               </p>
               <div className="containerButton">
-                <CustomButton
-                  width="192"
-                  height="40"
-                  variant="btnVariant1"
-                  textColor="white"
-                  content="Criar Conta"
-                  type="button"
-                  link="/register"
-                />
+                <Link to="/register">
+                  <CustomButton
+                    width="192"
+                    height="40"
+                    variant="btnVariant1"
+                    textColor="white"
+                    content="Criar Conta"
+                    type="button"
+                  />
+                </Link>
 
-                <CustomButton
-                  width="122"
-                  height="40"
-                  variant="btnVariant2"
-                  textColor="#BDBDBD"
-                  content="Login"
-                  type="button"
-                  link="/login"
-                />
+                <Link to="/login">
+                  <CustomButton
+                    width="122"
+                    height="40"
+                    variant="btnVariant2"
+                    textColor="#BDBDBD"
+                    content="Login"
+                    type="button"
+                  />
+                </Link>
               </div>
             </ContainerB>
             <ContainerC>
