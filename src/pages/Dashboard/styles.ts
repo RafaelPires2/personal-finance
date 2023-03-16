@@ -38,7 +38,6 @@ export const WrapperFinanceCenter = styled.div`
        font-size: 1.6rem;
        font-weight: 400;
     }
-
 `;
 
 export const WrapperFinanceRight = styled.div`

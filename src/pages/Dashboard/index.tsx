@@ -8,6 +8,9 @@ import {
   WrapperFinanceRight,
 } from "./styles";
 import { WrapperCardFinance } from "../../components/CardFinance/styles";
+import { CardTransaction } from "../../components/CardTransaction";
+import { CustomInput } from "../../components/CustomInput";
+import { HeaderTransaction } from "../../components/CardTransaction/styles";
 
 export function Dashboard() {
   return (
@@ -69,6 +72,17 @@ export function Dashboard() {
                 </div>
               </CardFinance>
             </WrapperCardFinance>
+
+            <CardTransaction>
+              <HeaderTransaction>
+                <h1>Transações</h1>
+                <CustomInput
+                  type="search"
+                  placeholder="digite qualquer coisa..."
+                />
+                <CustomInput type="date" />
+              </HeaderTransaction>
+            </CardTransaction>
           </WrapperFinanceCenter>
 
           <WrapperFinanceRight>

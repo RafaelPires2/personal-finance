@@ -1,7 +1,7 @@
 import React from "react";
 import { ContainerCardFinance } from "./styles";
 
-type ChildrenProps = {
+export type ChildrenProps = {
   children: React.ReactNode;
 };
 

@@ -5,6 +5,7 @@ export const WrapperCardFinance = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2%;
+  margin-bottom: 2.5rem;
 `;
 
 export const ContainerCardFinance = styled.div`
