@@ -16,6 +16,8 @@ export const defaultTheme = {
 
   textTitle: "#524C6F",
 
+  textParagraphDark: "#8C89B4",
+
   dark0: "#141332",
   dark1: "#1D1D41",
   dark2: "#6359E9",
