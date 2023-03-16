@@ -10,7 +10,7 @@ type ButtonContainerProps = {
   textColor: string;
   content: string;
   variant: any;
-  link?: string;
+  link?: any;
   type: "submit" | "button" | "reset";
 } & ButtonTypeProps;
 
